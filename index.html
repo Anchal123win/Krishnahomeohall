@@ -1,0 +1,319 @@
+<!doctype html><html lang="en">
+<head> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&amp;display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Raghvendra Singh | Krishna Homeo Hall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Raleway:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>   nav a {
+  color: maroon;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid transparent; /* transparent border by default */
+  border-radius: 6px;            /* rounded corners */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-weight: 600;
+}
+
+nav a.active {
+  border-color: maroon;          /* visible border on active */
+  font-weight: bold;
+  background-color: #f7e8e8;     /* subtle cream background to highlight */
+}
+      .profile-slide-container {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin: 25px auto;
+  max-width: 450px;
+  padding:  10px;
+  overflow: visible;
+  justify-content: center;
+}
+
+/* Profile image sliding then shrinking and shifting left */
+.profile-slide-image {
+  width: 1000px;
+  border-radius: 20%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: slideInAndMoveLeft 2.5s forwards;
+}
+
+/* Text container */
+.profile-text {
+  max-width: 500px;
+  opacity: 0;
+  animation: fadeInText 1.5s forwards;
+  animation-delay: 2.5s;
+}
+
+/* Big bold name */
+.profile-name {
+  font-family: montserrat, sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  margin: 0;
+  color: maroon;
+}
+
+/* Small golden quote with small caps */
+.profile-quote {
+  font-family: 'Georgia', serif;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  color: goldenrod;
+  margin-top: 8px;
+  letter-spacing: 1.2px;
+}
+
+/* Keyframes for image sliding and shrinking + shifting left */
+@keyframes slideInAndMoveLeft {
+  0% {
+    transform: translateX(-150%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120px) scale(0.6);
+    opacity: 1;
+  }
+}
+
+/* Text fade in */
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+    :root {
+      --cream: #fcefe9;
+      --maroon: #800000;
+      --peach: #ffe4c4;
+      --light-blue: #e0f7fa;
+      --dark-gray: #333;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark-gray);
+  line-height: 1.8;
+}
+
+header {
+  background-color: var(--maroon);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+}
+
+nav {
+  background-color: var(--peach);
+  padding: 15px 20px;
+  text-align: center;
+}
+
+nav a {
+  color: var(--dark-gray);
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  display: none;
+  transition: opacity 0.4s ease-in-out;
+}
+
+section.active {
+  display: block;
+}
+
+.circle-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--maroon);
+  display: block;
+  margin: 30px auto;
+}
+
+.quote {
+  font-family: cursive;
+  font-size: 1.4em;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 700px;
+  color: var(--maroon);
+}
+
+.contact-info, .clinic-info, ul {
+  margin-top: 30px;
+  font-size: 1.1em;
+}
+
+footer {
+  background-color: var(--maroon);
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+.button {
+  padding: 12px 20px;
+  background-color: var(--light-blue);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#spinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#spinner::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--maroon);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="spinner"></div>
+  <header>
+    <h1>KRISHNA &nbsp;&nbsp;HOMEO&nbsp;&nbsp;&nbsp;HALL</h1>
+    <p>BHMS, MD – Krishna Homeo Hall</p>
+  </header>  <nav>
+    <nav>
+  <a href="#" class="active" onclick="showSection('home', event)">Home</a>
+  <a href="#" onclick="showSection('about', event)">About</a>
+  <a href="#" onclick="showSection('contact', event)">Contact</a>
+</nav>
+  </nav> <section id="home" class="active">
+  <h2 style="text-align:center;">Welcome to our official website !</h2>
+
+  <!-- Centered round profile photo on top -->
+  <img src="https://i.postimg.cc/RZ7wsgtQ/IMG-20250605-220123.jpg" alt="Dr. Raghvendra Singh" class="circle-img">
+
+  <!-- Sliding image with name + quote beside it -->
+  <div class="profile-slide-container">
+    <img src="https://i.postimg.cc/KvVtRYk1/1000013385-removebg-preview.png" alt="Dr. Raghvendra Singh" class="profile-slide-image">
+    <div class="profile-text">
+      <h1 class="profile-name">Dr. Raghvendra Singh</h1>
+      <p class="profile-quote">• Healing Minds</p>
+    </div>
+  </div>
+
+  <!-- Quote -->
+  <div class="quote">“Healing begins with compassion, guided by experience.”</div>
+
+  <!-- Bio -->
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Dr. Raghvendra Singh is a dedicated homeopathic physician with over 3 years of clinical experience. Specializing in neurological disorders like epilepsy and anxiety, his mission is to provide relief and personalized treatment to every patient. He currently operates from Hata Bazar, Gorakhpur and runs Krishna Homeo Hall with utmost care and dedication.
+  </p>
+</section>  <section id="about">
+    <h2 style="text-align:center;">About Dr. Raghvendra Singh</h2>
+    <ul>
+      <li>Graduated from: Shaheed Raja Hari Prasad Mall State Homeopathic Medical College</li>
+      <li>Experience: Over 3 years working at his father's clinic</li>
+      <li>Awarded for excellence in academics and government outreach health camps</li>
+      <li>Expertise: Neurological conditions, chronic diseases, anxiety, and more</li>
+      <li>Motivated by a passion to help people and relieve suffering</li>
+    </ul>
+    <div class="quote">“Doctor is not just a profession, it's a promise to heal.”</div>
+  </section>  <section id="contact">
+    <h2 style="text-align:center;">Contact &amp; Visit</h2>
+    <div class="clinic-info">
+      <p><strong>Clinic Name:</strong> Krishna Homeo Hall</p>
+      <p><strong>Location:</strong> Hata Bazar, Gorakhpur, Uttar Pradesh</p>
+      <p><strong>Phone:</strong> 77530 99091</p>
+      <p><strong>Email:</strong> RaghvendraSingh@gmail.com</p>
+      <p><strong>Instagram:</strong>   
+      
+    <a href="https://www.instagram.com/raghvendrasingh56?igsh=MWU5NDM3cjlrY3k0eA==" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="30" height="30">
+</a> </p>
+      <p><strong>Clinic Hours:</strong> 11:00 AM – 7:00 PM (Closed on Friday &amp; Sunday)</p>
+    </div><div class="contact-info">
+  <h3>Leave a Message</h3>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Your Phone" required>
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button class="button" type="submit">Send</button>
+  </form>
+</div>
+
+  </section>  <footer>
+    <p>© 2025 Krishna Homeo Hall | All Rights Reserved</p>
+  </footer>  <script>
+    function showPage(id) {
+      document.getElementById('spinner').style.display = 'block';
+      setTimeout(() => {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.getElementById('spinner').style.display = 'none';
+      }, 400);
+    }
+  </script> <script> function setActiveLink(clickedLink) {
+  // Remove active from all nav links
+  document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+  // Add active to the clicked link
+  clickedLink.classList.add('active');
+}
+
+function showSection(sectionId, event) {
+  // Hide all sections
+  document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+  // Show the selected section
+  document.getElementById(sectionId).style.display = 'block';
+
+  // Update active nav link style
+  if (event) setActiveLink(event.target);
+}  </script>
+  
+</body></html>
